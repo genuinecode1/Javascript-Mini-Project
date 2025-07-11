@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gallery-wrap">
+        <img src="./images/back.png" alt="" id="backBtn">
+        <div class="gallery">
+            <div>
+                <span><img src="./images/WhatsApp Image 2024-12-16 at 15.36.29_9a910a00.jpg" alt=""></span>
+                <span><img src="./images/WhatsApp Image 2024-12-16 at 15.36.53_282ffa93.jpg" alt=""></span>
+                <span><img src="./images/WhatsApp Image 2024-12-16 at 15.37.17_ef001cee.jpg" alt=""></span>
+        
+            </div>
+            <div>
+                <span><img src="./images/WhatsApp Image 2024-12-16 at 15.37.36_3aa403ae.jpg" alt=""></span>
+                <span><img src="./images/WhatsApp Image 2024-12-16 at 15.38.12_b6bda911.jpg" alt=""></span>
+                <span><img src="./images/WhatsApp Image 2024-12-16 at 15.38.50_82becfe2.jpg" alt=""></span>
+        
+            </div> 
+    </div>
+
+    <img src="./images/next.png" alt="" id="nextBtn">
+
+    </div>
+
+    <script>
+        let scroolContainer = document.querySelector(".gallery");
+        let backBtn = document.getElementById("backBtn");
+        let nextBtn = document.getElementById("nextBtn");
+
+        scroolContainer.addEventListener("wheel",(evt) =>{
+            evt.preventDefault();
+            scroolContainer.scrollLeft += evt.deltaY;
+            scroolContainer.style.scrollBehaviour = "auto";
+        });
+
+        nextBtn.addEventListener("click",() =>{
+            scroolContainer.style.scrollBehaviour = "smooth";
+            scroolContainer.scrollLeft += 900;
+        })
+
+        backBtn.addEventListener("click", () => {
+            scroolContainer.style.scrollBehaviour = "smooth";
+                scroolContainer.scrollLeft -= 900;
+            })
+    </script>
+</body>
+</html>
